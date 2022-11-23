@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+
+<head>
+	<link href="http://gmpg.org/xfn/11" rel="profile">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+	<!-- Metadata -->
+	<meta name="description" content="A repository of my random thoughts and projects">
+	<meta property="og:description" content="A repository of my random thoughts and projects">
+	<meta property="og:title" content="On Friendships and Happiness" />
+	<meta property="og:type" content="article" />
+	<meta property="og:url" content="/friendships-happiness.html" />
+	<meta property="og:image" content="/images/./profile.png" />
+
+	<!-- Enable responsiveness on mobile devices-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+	<title>Arvindh Does Things - A repository of my random thoughts and projects	</title>
+
+	<!-- CSS -->
+	<link href="//fonts.googleapis.com/" rel="dns-prefetch">
+	<link
+		href="//fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic|Abril+Fatface|PT+Sans:400,400italic,700&amp;subset=latin,latin-ext"
+		rel="stylesheet">
+
+	<link rel="stylesheet" href="/theme/css/poole.css" />
+	<link rel="stylesheet" href="/theme/css/hyde.css" />
+	<link rel="stylesheet" href="/theme/css/syntax.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css"
+		integrity="sha256-XoaMnoYC5TH6/+ihMEnospgm0J1PM/nioxbOUdnM8HY=" crossorigin="anonymous">
+
+	<!-- Feeds -->
+
+	<!-- Analytics -->
+</head>
+
+<body class="theme-base-0d">
+<div class="sidebar">
+	<div class="container sidebar-sticky">
+		<div class="sidebar-about">
+
+			<h1>
+				<a href="/">
+					<img class="profile-picture" src="/images/./profile.png">
+					Arvindh Does Things
+				</a>
+			</h1>
+			<p class="lead"></p>
+			<p class="lead">A repository of my random thoughts and projects </p>
+			<p></p>
+		</div>
+			<ul class="sidebar-nav">
+			</ul>
+		<nav class="sidebar-social">
+					<a class="sidebar-social-item" href="http://github.com/arvindh-manian" target="_blank">
+						<i class="fa fa-GitHub"></i>
+					</a>
+					<a class="sidebar-social-item" href="http://twitter.com/arvindh_manian" target="_blank">
+						<i class="fa fa-Reddit"></i>
+					</a>
+			<a class="sidebar-social-item" href="/">
+				<i class="fa fa-rss"></i>
+			</a>
+		</nav>
+			<p class="sidebar-footer">Made with ♥ by Arvindh using Pelican</p>
+	</div>
+</div>	<div class="content container">
+<div class="post">
+	<h1 class="post-title">On Friendships and Happiness</h1>
+	<span class="post-date">November 23, 2022</span>
+	<p>In an episode of one of CGP Grey's podcasts (I unfortunately can't remember), I was first introduced to the concept of explore-exploit algorithms.</p>
+<p>The setup for these is pretty basic. I like to imagine it as a robot being teleported into this infinite 2D plane. Randomly scattered on the plane are different resources which — crucially — have different values. Each of these resources can be mined infinitely, with the value solely deciding how fast the robot gains points from mining that resource.</p>
+<p><img alt="Robot on 2D plane" src="/images/friendships-happiness/robot.png"></p>
+<p>The question is, given a time constraint, <em>what should the robot do to optimize its points by the end of the time?</em> To add, the robot knows nothing about the relative frequencies of the resources and the values of resources cannot be ascertained until the robot has mined them for a non-neglible amount of time.</p>
+<p>Upon some reflection, it becomes obvious that the robot's optimal decision is to explore for some time (checking the value of each resource) and then exploit the highest-valued found resources for the remaining time<sup>[1]</sup>. </p>
+<p>This situation has an obvious correspondence with humans looking for friends. Much like robots, there are essentially an infinite number of possible friends<sup>[2]</sup>. Each friend has a different value, corresponding to the happiness we gain from being friends with them. And we fundamentally have limited time — our lifespan — to maximize our happiness within.</p>
+<p>However, there are three main factors that distinguish this situation from the situation of humans looking for friends, and the first is (wait for it)...</p>
+<h2>Heuristics</h2>
+<p>Unlike the robot, we have access to a variety of heuristics about the potential value of friends. There are heuristics we implicitly use before even talking to them: analyzing their habits (based on the context in which we meet them), their physical characteristics, their fashion, etc. And there are also heuristics we use during our first conversation with them: observing their humor, their eye contact, their intelligence, their laugh, their way of talking, etc.</p>
+<p>So we, unlike the robot, scan ahead. Using the heuristics, we can establish an approximate floor for the value of a friendship; we say to ourselves that we <em>feel like</em> we could be friends with them.</p>
+<p>But one thing I've realized recently is the problem with using such heuristics: <strong>getting friendships is a problem that can't be solved with greedy algorithms using heuristics<sup>[3]</sup>.</strong> At each instance, I'm best off by finding people who conform to my heuristics (which happens to disproportionately be nerdy guys), but the aggregate effect of that is having a friend group that's rather unbalanced in terms of interests — an echo chamber of personality. And so the happiness I get from each additional person who conforms is decreasing (i.e., there is attenuating marginal benefit).</p>
+<p>As such, how can we best use the heuristics? One option is to simply disregard the heuristics altogether and make a conscious choice to attempt to befriend people equally. Another is to </p>
+<h2>Network Effects</h2>
+<p>Besides our ability to use heuristics, there's also the presence of network effects; it's easier to become friends with someone if you are friends with their friends. </p>
+<p>So the value a friend encapsulate also includes the value of the potential friends you could make by being friends with them.</p>
+<p>From a consequentialist standpoint, there's no real problem with this mindset; they gain a friend and you gain a friend, so everyone is better off. From their perspective, there is no difference between you being a friend for the sake of the happiness you gain from hanging out with them specifically versus you being a friend for the sake of the happiness you gain from hanging out with them and their network. In either instance, your incentives lead you to treat them like a close friend.</p>
+<p>Still, viewing friends as a means instead of an end feels a bit morally suspect to me. In both instances, you evaluate friends based on the happiness they bring you; you (probably) wouldn't be friends with someone who, on net, makes you less happy. But including their network in that calculation feels strange, even though, rationally, you should.</p>
+<h1>Footnotes</h1>
+<p>[1] A simple proof, which I first saw outlined in Langford et al.'s "Competitive Analysis of the Explore/Exploit Tradeoff," is as follows: imagine exploiting during round <em>t</em> and exploring during a later round <em>t'</em>. Next, imagine instead exploring during round <em>t</em> and exploiting during round <em>t'</em>. This change obviously does not change rewards from (0, <em>t</em>), but improves rewards in the interval (<em>t</em>, <em>t'</em>). This obviously holds for all such pairs <em>t</em> and <em>t'</em>. As such, we can be certain that we should start by exploring and then exploiting. </p>
+<p>[2] Obviously, there is not actually an infinite number of potential friends. But, considering the fact that we humans can only handle a <a href="https://en.wikipedia.org/wiki/Dunbar%27s_number">few hundred friendships at maximum</a>, the 7.8 billion people is functionally an infinite supply of potential friends. </p>
+<p>[3] This is assuming your calculations for the greedy algorithm don't account for the attenuation of marginal benefit. I guess they could? But the interpretation I intended is that the greedy algorithm is based on your heuristics, which (at least for me personally) don't account for that attenuation.</p>
+
+		<span class="post-tags">
+			Tags:
+			<ul>
+					<li><a href="/tag/philosophy.html">philosophy</a></li>
+					<li><a href="/tag/cs.html">cs</a></li>
+			</ul>
+		</span>
+
+</div>
+	</div>
+</body>
+
+</html>
