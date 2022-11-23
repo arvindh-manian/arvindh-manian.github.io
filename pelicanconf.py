@@ -21,6 +21,11 @@ SITESUBTITLE = "A repository of my random thoughts and projects"
 BIO = "A repository of my random thoughts and projects"
 FOOTER_TEXT = "Made with ♥ by Arvindh using Pelican"
 
+STATIC_PATHS = ['images', 'extra/favicon.ico']
+
+EXTRA_PATH_METADATA = {
+    'extra/favicon.ico': {'path': 'favicon.ico'}
+}
 
 # Uncomment following line if you want document-relative URLs when developing
 # RELATIVE_URLS = True
@@ -37,5 +42,7 @@ MARKUP = 'md'
 
 HTML_LANG = 'en'
 
-SOCIAL = (('GitHub',  'http://github.com/arvindh-manian'),
-          ('Reddit', 'http://reddit.com/arvindh_manian'),)
+SOCIAL = (('github',  'https://www.github.com/arvindh-manian'),
+          ('reddit', 'https://www.reddit.com/arvindh_manian'),
+          ('linkedin', 'https://www.linkedin.com/in/arvindh-manian/'),
+          ('email', 'arvindh.manian@duke.edu'))
