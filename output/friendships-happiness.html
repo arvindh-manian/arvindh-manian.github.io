@@ -11,8 +11,8 @@
 	<meta property="og:description" content="A repository of my random thoughts and projects">
 	<meta property="og:title" content="On Friendships and Happiness" />
 	<meta property="og:type" content="article" />
-	<meta property="og:url" content="/friendships-happiness.html" />
-	<meta property="og:image" content="/images/./profile.png" />
+	<meta property="og:url" content="./friendships-happiness.html" />
+	<meta property="og:image" content="./images/./profile.png" />
 
 	<!-- Enable responsiveness on mobile devices-->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
@@ -25,9 +25,9 @@
 		href="//fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic|Abril+Fatface|PT+Sans:400,400italic,700&amp;subset=latin,latin-ext"
 		rel="stylesheet">
 
-	<link rel="stylesheet" href="/theme/css/poole.css" />
-	<link rel="stylesheet" href="/theme/css/hyde.css" />
-	<link rel="stylesheet" href="/theme/css/syntax.css" />
+	<link rel="stylesheet" href="./theme/css/poole.css" />
+	<link rel="stylesheet" href="./theme/css/hyde.css" />
+	<link rel="stylesheet" href="./theme/css/syntax.css" />
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css"
 		integrity="sha256-XoaMnoYC5TH6/+ihMEnospgm0J1PM/nioxbOUdnM8HY=" crossorigin="anonymous">
 
@@ -42,8 +42,8 @@
 		<div class="sidebar-about">
 
 			<h1>
-				<a href="/">
-					<img class="profile-picture" src="/images/./profile.png">
+				<a href="/.">
+					<img class="profile-picture" src="./images/./profile.png">
 					Arvindh Does Things
 				</a>
 			</h1>
@@ -75,7 +75,7 @@
 	<span class="post-date">November 23, 2022</span>
 	<p>In an episode of one of CGP Grey's podcasts (I unfortunately can't remember), I was first introduced to the concept of explore-exploit algorithms.</p>
 <p>The setup for these is pretty basic. I like to imagine it as a robot being teleported into this infinite 2D plane. Randomly scattered on the plane are different resources which — crucially — have different values. Each of these resources can be mined infinitely, with the value solely deciding how fast the robot gains points from mining that resource.</p>
-<p><img alt="Robot on 2D plane" src="/images/friendships-happiness/robot.png"></p>
+<p><img alt="Robot on 2D plane" src="./images/friendships-happiness/robot.png"></p>
 <p>The question is, given a time constraint, <em>what should the robot do to optimize its points by the end of the time?</em> To add, the robot knows nothing about the relative frequencies of the resources and the values of resources cannot be ascertained until the robot has mined them for a non-neglible amount of time.</p>
 <p>Upon some reflection, it becomes obvious that the robot's optimal decision is to explore for some time (checking the value of each resource) and then exploit the highest-valued found resources for the remaining time<sup>[1]</sup>. </p>
 <p>This situation has an obvious correspondence with looking for friends. Much like robots, there are essentially an infinite number of possible friends<sup>[2]</sup>. Each friend has a different value, corresponding to the happiness we gain from being friends with them. And we fundamentally have limited time — our lifespan — to maximize our happiness within.</p>
@@ -97,13 +97,13 @@
 <h1>Footnotes</h1>
 <p>[1] A simple proof, which I first saw outlined in Langford et al.'s "Competitive Analysis of the Explore/Exploit Tradeoff," is as follows: imagine exploiting during round <em>t</em> and exploring during a later round <em>t'</em>. Next, imagine instead exploring during round <em>t</em> and exploiting during round <em>t'</em>. This change obviously does not change rewards from (0, <em>t</em>), but improves rewards in the interval (<em>t</em>, <em>t'</em>). This obviously holds for all such pairs <em>t</em> and <em>t'</em>. As such, we can be certain that we should start by exploring and then exploiting. </p>
 <p>[2] Obviously, there is not actually an infinite number of potential friends. But, considering the fact that we humans can only handle a <a href="https://en.wikipedia.org/wiki/Dunbar%27s_number">few hundred friendships at maximum</a>, the 7.8 billion people is functionally an infinite supply of potential friends. </p>
-<p>[3] This is assuming your calculations for the greedy algorithm don't account for the attenuation of marginal benefit. I guess they could? But the interpretation I intended is that the greedy algorithm is based on your heuristics, which (at least for me personally) don't account for that attenuation.</p>
+<p>[3] This is assuming your calculations for the greedy algorithm don't account for the attenuation of marginal benefit. I guess they could? But the interpretation I intended is that the greedy algorithm is based on your heuristics, which (at least for me personally) don't account for that effect.</p>
 
 		<span class="post-tags">
 			Tags:
 			<ul>
-					<li><a href="/tag/philosophy.html">philosophy</a></li>
-					<li><a href="/tag/cs.html">cs</a></li>
+					<li><a href="./tag/philosophy.html">philosophy</a></li>
+					<li><a href="./tag/cs.html">cs</a></li>
 			</ul>
 		</span>
 

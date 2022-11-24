@@ -54,4 +54,4 @@ After all, we find it difficult to leave friends who even make us on-net unhappy
 
 [2] Obviously, there is not actually an infinite number of potential friends. But, considering the fact that we humans can only handle a [few hundred friendships at maximum](https://en.wikipedia.org/wiki/Dunbar%27s_number), the 7.8 billion people is functionally an infinite supply of potential friends. 
 
-[3] This is assuming your calculations for the greedy algorithm don't account for the attenuation of marginal benefit. I guess they could? But the interpretation I intended is that the greedy algorithm is based on your heuristics, which (at least for me personally) don't account for that attenuation.
+[3] This is assuming your calculations for the greedy algorithm don't account for the attenuation of marginal benefit. I guess they could? But the interpretation I intended is that the greedy algorithm is based on your heuristics, which (at least for me personally) don't account for that effect.
