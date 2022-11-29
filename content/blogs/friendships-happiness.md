@@ -48,6 +48,7 @@ The third factor is delay discounting. We value happiness **now** over happiness
 
 This graph is what I'd guess an optimal exploration-exploitation curve looks like for humans. Obviously, the exact y-intercept or the x-axis scale aren't particularly important, as those are going to depend on the exact context (this graph is probably representative of, for example, exploration-exploitation of happiness-generating activities over time). But the shape is crucial: as time goes on, more energy is dedicated to *exploitation* as opposed to *exploration*, with that % energy *increasing at an increasing rate*. I.e., the derivative and the second derivative are both positive. I find this shape to intuitively stem from the above three factors, but I haven't sat down and rigorously thought about it. If I'm wrong, feel free to reach out and explain why.
 
+<!---
 
 ## Friendships
 
@@ -80,7 +81,7 @@ I don't really know how to resolve this. Optimally, we'd incorporate the value o
 Unlike the robot who can losslessly switch between resources, we have a certain stickiness with respect to friends. We form emotional attachments, and there are societal pressures to stick with them. 
 
 After all, we find it difficult to leave friends who even make us on-net unhappy. It would be infinitely harder to leave friends that make us happy but *don't make us as happy as we could be with other friends*, even though that opportunity cost is a real cost of being friends with them. Combined with the fact that we have network effects, this implies that 
-
+-->
 
 # Footnotes
 [1] Now, I've always been a bit annoyed by the term "nigh-infinite". Literally no number is nigh-infinite; every number you can possibly think of is, well, *infinitely* closer to 1 than it is to infinity. But, in this case, I find the term fairly appropriate. Our brains are [weak enough](https://theconversation.com/brains-are-bad-at-big-numbers-making-it-impossible-to-grasp-what-a-million-covid-19-deaths-really-means-179081) at perceiving large numbers that, for all intents and purposes, we basically just group them all as "super large" and increasingly lack any perception of scale as they continue to increase. And often we consume such a negligible proportion of the potential options that there may as well be an infinite number of them. For example, the article will later discuss the issue of finding friends. Obviously, there are not an infinite number of potential friends. But, considering the fact that we humans can only handle a [few hundred friendships at maximum](https://en.wikipedia.org/wiki/Dunbar%27s_number), there functionally is an infinite supply. At minimum, there's very little loss in application of the algorithm to instead assume that there *is* an infinite supply.

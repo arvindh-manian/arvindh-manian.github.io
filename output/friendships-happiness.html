@@ -98,22 +98,41 @@ The lemma follows by induction on all pairs (<em>t</em>, <em>t'</em>) of exploit
 <p>The third factor is delay discounting. We value happiness <strong>now</strong> over happiness <strong>later</strong>. This almost entirely changes the decision calculus; by front-loading the exploration, you now decrease the utility of the later exploitation. The exact way in which this affects your choice of exploration/exploitation depends on your personal discounting function<sup>[2]</sup>.</p>
 <p><img alt="My best guess as to a generically optimal human exploration-exploitation curve" src="./images/friendships-happiness/optimal.png"></p>
 <p>This graph is what I'd guess an optimal exploration-exploitation curve looks like for humans. Obviously, the exact y-intercept or the x-axis scale aren't particularly important, as those are going to depend on the exact context (this graph is probably representative of, for example, exploration-exploitation of happiness-generating activities over time). But the shape is crucial: as time goes on, more energy is dedicated to <em>exploitation</em> as opposed to <em>exploration</em>, with that % energy <em>increasing at an increasing rate</em>. I.e., the derivative and the second derivative are both positive. I find this shape to intuitively stem from the above three factors, but I haven't sat down and rigorously thought about it. If I'm wrong, feel free to reach out and explain why.</p>
-<h2>Friendships</h2>
-<p>This situation has an obvious correspondence with looking for friends. Much like robots pursuing an infinite amount of potential resources, there are essentially an infinite number of possible friends<sup>[2]</sup>. Each friend has a different value, corresponding to the happiness we gain from being friends with them. And we fundamentally have limited time — our lifespan — to maximize our happiness within.</p>
-<h2>Heuristics</h2>
-<p>Unlike the robot, we have access to a variety of heuristics about the potential value of friends. There are heuristics we implicitly use before even talking to them: analyzing their habits (based on the context in which we meet them), their physical characteristics, their fashion, etc. And there are also heuristics we use during our first conversation with them: observing their humor, their eye contact, their intelligence, their laugh, their way of talking, etc.</p>
-<p>So we, unlike the robot, scan ahead. Using the heuristics, we can establish an approximate floor for the value of a friendship; we say to ourselves that we <em>feel like</em> we could be friends with them.</p>
-<p>But one thing I've realized recently is the problem with using such heuristics: <strong>getting friendships is a problem that can't be solved with greedy algorithms using heuristics</strong><sup>[3]</sup>. At each instance, I'm best off by finding people who conform to my heuristics (which happens to disproportionately be extroverted nerdy guys), but the aggregate effect of that is having a friend group that's rather unbalanced in terms of interests — an echo chamber of personality. And so the happiness I get from each additional person who conforms decreases (i.e., there is attenuating marginal benefit).</p>
-<p>As such, how can we best use the heuristics? One option is to simply disregard the heuristics altogether and make a conscious choice to attempt to befriend people equally. Another is to try to attenuate the importance of the heuristics over time. I find both of these pretty hard to implement personally, though.</p>
-<h2>Network Effects</h2>
-<p>Besides our ability to use heuristics, there's also the presence of network effects; it's easier to become friends with someone if you are friends with their friends. </p>
-<p>So, from a certain perspective, the value a friend encapsulates <em>also</em> includes the value of the potential friends you could make by being friends with them.</p>
-<p>From a consequentialist standpoint, there's no real problem with this mindset of being friends with someone because of their network; they gain a friend and you gain a friend, so everyone is better off. From their perspective, there is no difference between you being a friend for the sake of the happiness you gain from hanging out with <em>them specifically</em> versus you being a friend for the sake of the happiness you gain from hanging out with them <em>and</em> their network. In either instance, your incentives lead you to treat them like a close friend.</p>
-<p>Still, viewing friends as a means instead of an end feels a bit morally suspect to me. In both instances, you evaluate friends based on the happiness they bring you; you (probably) wouldn't be friends with someone who, on net, makes you less happy. But including their network in that calculation feels strange, even though, rationally, you should.</p>
-<p>I don't really know how to resolve this. Optimally, we'd incorporate the value of people's networks into our calculations of friendship, but that obviously seems a bit morally repugnant. The reconciliation is thus left as an exercise for the reader.</p>
-<h2>Stickiness</h2>
-<p>Unlike the robot who can losslessly switch between resources, we have a certain stickiness with respect to friends. We form emotional attachments, and there are societal pressures to stick with them. </p>
-<p>After all, we find it difficult to leave friends who even make us on-net unhappy. It would be infinitely harder to leave friends that make us happy but <em>don't make us as happy as we could be with other friends</em>, even though that opportunity cost is a real cost of being friends with them. Combined with the fact that we have network effects, this implies that </p>
+<!---
+
+## Friendships
+
+This situation has an obvious correspondence with looking for friends. Much like robots pursuing an infinite amount of potential resources, there are essentially an infinite number of possible friends<sup>[2]</sup>. Each friend has a different value, corresponding to the happiness we gain from being friends with them. And we fundamentally have limited time — our lifespan — to maximize our happiness within.
+
+## Heuristics
+
+Unlike the robot, we have access to a variety of heuristics about the potential value of friends. There are heuristics we implicitly use before even talking to them: analyzing their habits (based on the context in which we meet them), their physical characteristics, their fashion, etc. And there are also heuristics we use during our first conversation with them: observing their humor, their eye contact, their intelligence, their laugh, their way of talking, etc.
+
+So we, unlike the robot, scan ahead. Using the heuristics, we can establish an approximate floor for the value of a friendship; we say to ourselves that we *feel like* we could be friends with them.
+
+But one thing I've realized recently is the problem with using such heuristics: **getting friendships is a problem that can't be solved with greedy algorithms using heuristics**<sup>[3]</sup>. At each instance, I'm best off by finding people who conform to my heuristics (which happens to disproportionately be extroverted nerdy guys), but the aggregate effect of that is having a friend group that's rather unbalanced in terms of interests — an echo chamber of personality. And so the happiness I get from each additional person who conforms decreases (i.e., there is attenuating marginal benefit).
+
+As such, how can we best use the heuristics? One option is to simply disregard the heuristics altogether and make a conscious choice to attempt to befriend people equally. Another is to try to attenuate the importance of the heuristics over time. I find both of these pretty hard to implement personally, though.
+
+## Network Effects
+
+Besides our ability to use heuristics, there's also the presence of network effects; it's easier to become friends with someone if you are friends with their friends. 
+
+So, from a certain perspective, the value a friend encapsulates *also* includes the value of the potential friends you could make by being friends with them.
+
+From a consequentialist standpoint, there's no real problem with this mindset of being friends with someone because of their network; they gain a friend and you gain a friend, so everyone is better off. From their perspective, there is no difference between you being a friend for the sake of the happiness you gain from hanging out with *them specifically* versus you being a friend for the sake of the happiness you gain from hanging out with them *and* their network. In either instance, your incentives lead you to treat them like a close friend.
+
+Still, viewing friends as a means instead of an end feels a bit morally suspect to me. In both instances, you evaluate friends based on the happiness they bring you; you (probably) wouldn't be friends with someone who, on net, makes you less happy. But including their network in that calculation feels strange, even though, rationally, you should.
+
+I don't really know how to resolve this. Optimally, we'd incorporate the value of people's networks into our calculations of friendship, but that obviously seems a bit morally repugnant. The reconciliation is thus left as an exercise for the reader.
+
+## Stickiness
+
+Unlike the robot who can losslessly switch between resources, we have a certain stickiness with respect to friends. We form emotional attachments, and there are societal pressures to stick with them. 
+
+After all, we find it difficult to leave friends who even make us on-net unhappy. It would be infinitely harder to leave friends that make us happy but *don't make us as happy as we could be with other friends*, even though that opportunity cost is a real cost of being friends with them. Combined with the fact that we have network effects, this implies that 
+-->
+
 <h1>Footnotes</h1>
 <p>[1] Now, I've always been a bit annoyed by the term "nigh-infinite". Literally no number is nigh-infinite; every number you can possibly think of is, well, <em>infinitely</em> closer to 1 than it is to infinity. But, in this case, I find the term fairly appropriate. Our brains are <a href="https://theconversation.com/brains-are-bad-at-big-numbers-making-it-impossible-to-grasp-what-a-million-covid-19-deaths-really-means-179081">weak enough</a> at perceiving large numbers that, for all intents and purposes, we basically just group them all as "super large" and increasingly lack any perception of scale as they continue to increase. And often we consume such a negligible proportion of the potential options that there may as well be an infinite number of them. For example, the article will later discuss the issue of finding friends. Obviously, there are not an infinite number of potential friends. But, considering the fact that we humans can only handle a <a href="https://en.wikipedia.org/wiki/Dunbar%27s_number">few hundred friendships at maximum</a>, there functionally is an infinite supply. At minimum, there's very little loss in application of the algorithm to instead assume that there <em>is</em> an infinite supply.</p>
 <p>[2] This seems like a good place to transition into a tangential discussion about delay discounting functions. The ones I find most interesting are the time-inconsistent ones. Time-consistency is this idea of whether the decision you make depends on when the decision occurs. If it doesn't depend on when it occurs, it's time-consistent.</p>
