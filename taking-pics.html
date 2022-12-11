@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+
+<head>
+	<link href="http://gmpg.org/xfn/11" rel="profile">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+	<!-- Metadata -->
+	<meta name="description" content="A repository of my random thoughts and projects">
+	<meta property="og:description" content="A repository of my random thoughts and projects">
+	<meta property="og:title" content="The Panmacticon: How I set up my computer to take pictures of me" />
+	<meta property="og:type" content="article" />
+	<meta property="og:url" content="./taking-pics.html" />
+	<meta property="og:image" content="./images/./profile.png" />
+
+	<!-- Enable responsiveness on mobile devices-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+	<title>Arvindh Does Things - A repository of my random thoughts and projects	</title>
+
+	<!-- CSS -->
+	<link href="//fonts.googleapis.com/" rel="dns-prefetch">
+	<link
+		href="//fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic|Abril+Fatface|PT+Sans:400,400italic,700&amp;subset=latin,latin-ext"
+		rel="stylesheet">
+
+	<link rel="stylesheet" href="./theme/css/poole.css" />
+	<link rel="stylesheet" href="./theme/css/hyde.css" />
+	<link rel="stylesheet" href="./theme/css/syntax.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css"
+		integrity="sha256-XoaMnoYC5TH6/+ihMEnospgm0J1PM/nioxbOUdnM8HY=" crossorigin="anonymous">
+
+	<!-- Feeds -->
+
+	<!-- Analytics -->
+</head>
+
+<body class="theme-base-0d">
+<div class="sidebar">
+	<div class="container sidebar-sticky">
+		<div class="sidebar-about">
+
+			<h1>
+				<a href="/.">
+					<img class="profile-picture" src="./images/./profile.png">
+					Arvindh Does Things
+				</a>
+			</h1>
+			<p class="lead"></p>
+			<p class="lead">A repository of my random thoughts and projects </p>
+			<p></p>
+		</div>
+		<ul class="sidebar-nav">
+		</ul>
+		<nav class="sidebar-social">
+			<a class="sidebar-social-item" href="https://www.github.com/arvindh-manian" target="_blank">
+				<i class="fa fa-github"></i>
+			</a>
+			<a class="sidebar-social-item" href="https://www.reddit.com/arvindh_manian" target="_blank">
+				<i class="fa fa-reddit"></i>
+			</a>
+			<a class="sidebar-social-item" href="https://www.linkedin.com/in/arvindh-manian/" target="_blank">
+				<i class="fa fa-linkedin"></i>
+			</a>
+			<a class="sidebar-social-item" href="mailto:arvindh.manian@duke.edu">
+				<i class="fa fa-envelope"></i>
+			</a>
+		</nav>
+		<p class="sidebar-footer">Made with ♥ by Arvindh using Pelican</p>
+	</div>
+</div>	<div class="content container">
+<div class="post">
+	<h1 class="post-title">The Panmacticon: How I set up my computer to take pictures of me</h1>
+	<span class="post-date">December 11, 2022</span>
+	<p>I was recently watching <a href="https://www.youtube.com/watch?v=H4ukudIrLxQ">carykh's video on daily photos</a> when I decided I would start taking daily photos too.</p>
+<p>Unfortunately, I don't have nearly the mental fortitude to remember to do that everyday. So, instead, I've set my computer to (somewhat) do that for me.</p>
+<p>Instead of taking photos every day, my computer will take a photo at a random point in time in each 30 minute interval.</p>
+<p>Specifically, this entails a cron job which calls a bash script that takes photos of me using <a href="https://github.com/rharder/imagesnap">imagesnap</a>.</p>
+<p>Here's the shell script:</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+<span class="nv">SCRIPT_DIR</span><span class="o">=</span><span class="s2">&quot;/Users/arvindh/CS/projects/pics&quot;</span>
+<span class="nv">statefile</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">SCRIPT_DIR</span><span class="si">}</span><span class="s2">/statefile&quot;</span>
+
+<span class="nb">declare</span> -i persistent_counter
+
+<span class="k">if</span> <span class="o">[</span> -f <span class="s2">&quot;</span><span class="nv">$statefile</span><span class="s2">&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+  <span class="nb">read</span> -r persistent_counter &lt;<span class="s2">&quot;</span><span class="nv">$statefile</span><span class="s2">&quot;</span>
+<span class="k">else</span>
+  <span class="nv">persistent_counter</span><span class="o">=</span><span class="m">0</span>
+<span class="k">fi</span>
+
+<span class="nv">persistent_counter</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$((</span>persistent_counter <span class="o">+</span> <span class="m">1</span><span class="k">))</span><span class="s2">&quot;</span>
+
+<span class="nb">printf</span> <span class="s1">&#39;%d\n&#39;</span> <span class="s2">&quot;</span><span class="nv">$persistent_counter</span><span class="s2">&quot;</span> &gt;<span class="s2">&quot;</span><span class="nv">$statefile</span><span class="s2">&quot;</span>
+
+<span class="nv">rand</span><span class="o">=</span><span class="k">$((</span><span class="nv">$RANDOM</span> <span class="o">%</span> <span class="m">1700</span> <span class="o">+</span> <span class="m">1</span><span class="k">))</span>
+
+sleep <span class="nv">$rand</span>
+
+/opt/homebrew/bin/imagesnap <span class="s2">&quot;</span><span class="si">${</span><span class="nv">SCRIPT_DIR</span><span class="si">}</span><span class="s2">/img/</span><span class="si">${</span><span class="nv">persistent_counter</span><span class="si">}</span><span class="s2">.jpg&quot;</span>
+</code></pre></div>
+
+<p>Basically, I predefined a directory for the script (this instead could've been done by having the bash script find the directory that it was located in, but I wasn't sure how that interacted with cron). Inside of that directory, I have a file called <code>statefile</code> that exists to save the current number image that the bash script is on (as it saves them in the format <code>1.jpg</code>, <code>2.jpg</code>, etc.). The script reads in the file, increments the number found there, sleeps for a random amount of time from 0 to 1700 seconds<sup>[1]</sup> (I could've done 0 to 1800 but I wanted to avoid race conditions), and then takes a picture, saving it in the <code>/img/</code> folder.</p>
+<p>Then, all we need is a cron job for it. </p>
+<div class="highlight"><pre><span></span><code>*/30 * * * * /Users/arvindh/CS/projects/pics/launch.sh
+</code></pre></div>
+
+<p>Should work, running <code>launch.sh</code> every 30 minutes. </p>
+<p>Unfortunately, it doesn't. Apparently, in newer versions of Mac OS, cron doesn't have permissions to access the camera, which prevents the subsequent call to imagesnap from successfully taking a picture. The worst part is that imagesnap doesn't throw an error about this or output any message about the permissions issues, so any output in my log files in the course of debugging wasn't very helpful.</p>
+<p>The workaround, as presented on <a href="https://stackoverflow.com/a/52878770/20503988">Stack Overflow</a>, is to create a wrapper application in Automator and have your cron job open that.</p>
+<p>That wasn't very hard. The Automator job consists only of a "Run Shell Script" block, and the only text in there needs to be </p>
+<div class="highlight"><pre><span></span><code>/Users/arvindh/CS/projects/pics/launch.sh
+</code></pre></div>
+
+<p>I saved that Automator app as takepics.app in the /Applications directory. Then, the cron job should be</p>
+<div class="highlight"><pre><span></span><code>*/30 * * * * open /Applications/takepic.app
+</code></pre></div>
+
+<p>And there we go!</p>
+<p>I'll probably (if I remember) update this blog in a couple months with a timelapse of all of the photos stitched together. Maybe I'll even use a cron job to automate the creation of the timelapse and the updating of this post. But that's a task for another time.</p>
+<h1>Footnotes</h1>
+<p>[1] This is a bit of a flawed way of doing random number generation. <code>$RANDOM</code> generates a number in the range of 0 to 32767. Since 32767 is not divisible by 1700, this means there is a higher chance of <code>$RANDOM % 1700</code> being a lower number than a relatively higher one. This is a trivial enough use case where it doesn't matter, though.</p>
+
+		<span class="post-tags">
+			Tags:
+			<ul>
+					<li><a href="./tag/cs.html">cs</a></li>
+			</ul>
+		</span>
+
+</div>
+	</div>
+</body>
+
+</html>
