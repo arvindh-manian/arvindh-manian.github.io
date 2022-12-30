@@ -1,6 +1,6 @@
 Title: The Panmacticon: How I set up my computer to take pictures of me
 Date: 2022-12-11
-Modified: 2022-12-11 12:15 AM
+Modified: 2022-12-30 2:29 PM
 Category: minis
 Tags: cs
 Slug: taking-pics
