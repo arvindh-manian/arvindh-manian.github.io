@@ -3,6 +3,7 @@ Date: 2022-11-23
 Modified: 2022-11-23 10:15 PM
 Category: IRL
 Tags: philosophy, cs
+Status: draft
 Slug: friendships-happiness
 Summary: I pontificate about friendships, happiness, and greedy algorithms.
 

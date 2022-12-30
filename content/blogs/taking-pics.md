@@ -61,7 +61,9 @@ I saved that Automator app as takepics.app in the /Applications directory. Then,
 
 And there we go!
 
-I'll probably (if I remember) update this blog in a couple months with a timelapse of all of the photos stitched together. Maybe I'll even use a cron job to automate the creation of the timelapse and the updating of this post. But that's a task for another time.
+<iframe width="560" height="315" src="https://www.youtube.com/embed/eauOmFHx7H0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+Here's the timelapse as of December 30. If I remember, I'll update it again sometime later in 2023. Maybe I'll even use a cron job to automate the creation of the timelapse and the updating of this post. But that's a task for another time.
 
 # Footnotes
 
