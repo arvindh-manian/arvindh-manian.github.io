@@ -32,7 +32,7 @@ It's a pretty fun thought experiment to consider how long it'd take each person.
 
 Online friends who I used to play video games with? Laughably low discovery chances and functionally-nonexistent inward network effects. They genuinely might never find out.
 
-It's hard to put into words what exactly each person's time-till-knowing encapsulates. It's not exactly a measure 
+It's hard to put into words what exactly each person's time-till-knowing encapsulates. It's not exactly a measure of how close you are (I certainly doubt I'm closer to Nate than I am to my family) but it seems to relate. It's not a measure of how much we see each other, although that is also a factor. I guess it's like how engrained you are in my life and how engrained I am in yours? I'm not sure.
 
 # Footnotes
 
