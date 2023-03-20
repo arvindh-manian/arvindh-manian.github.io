@@ -82,23 +82,23 @@
 <span class="nv">SCRIPT_DIR</span><span class="o">=</span><span class="s2">&quot;/Users/arvindh/CS/projects/pics&quot;</span>
 <span class="nv">statefile</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">SCRIPT_DIR</span><span class="si">}</span><span class="s2">/statefile&quot;</span>
 
-<span class="nb">declare</span> -i persistent_counter
+<span class="nb">declare</span><span class="w"> </span>-i<span class="w"> </span>persistent_counter
 
-<span class="k">if</span> <span class="o">[</span> -f <span class="s2">&quot;</span><span class="nv">$statefile</span><span class="s2">&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-  <span class="nb">read</span> -r persistent_counter &lt;<span class="s2">&quot;</span><span class="nv">$statefile</span><span class="s2">&quot;</span>
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-f<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$statefile</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">  </span><span class="nb">read</span><span class="w"> </span>-r<span class="w"> </span>persistent_counter<span class="w"> </span>&lt;<span class="s2">&quot;</span><span class="nv">$statefile</span><span class="s2">&quot;</span>
 <span class="k">else</span>
-  <span class="nv">persistent_counter</span><span class="o">=</span><span class="m">0</span>
+<span class="w">  </span><span class="nv">persistent_counter</span><span class="o">=</span><span class="m">0</span>
 <span class="k">fi</span>
 
-<span class="nv">persistent_counter</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$((</span>persistent_counter <span class="o">+</span> <span class="m">1</span><span class="k">))</span><span class="s2">&quot;</span>
+<span class="nv">persistent_counter</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$((</span>persistent_counter<span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">1</span><span class="k">))</span><span class="s2">&quot;</span>
 
-<span class="nb">printf</span> <span class="s1">&#39;%d\n&#39;</span> <span class="s2">&quot;</span><span class="nv">$persistent_counter</span><span class="s2">&quot;</span> &gt;<span class="s2">&quot;</span><span class="nv">$statefile</span><span class="s2">&quot;</span>
+<span class="nb">printf</span><span class="w"> </span><span class="s1">&#39;%d\n&#39;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$persistent_counter</span><span class="s2">&quot;</span><span class="w"> </span>&gt;<span class="s2">&quot;</span><span class="nv">$statefile</span><span class="s2">&quot;</span>
 
-<span class="nv">rand</span><span class="o">=</span><span class="k">$((</span><span class="nv">$RANDOM</span> <span class="o">%</span> <span class="m">1700</span> <span class="o">+</span> <span class="m">1</span><span class="k">))</span>
+<span class="nv">rand</span><span class="o">=</span><span class="k">$((</span><span class="nv">$RANDOM</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="m">1700</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">1</span><span class="k">))</span>
 
-sleep <span class="nv">$rand</span>
+sleep<span class="w"> </span><span class="nv">$rand</span>
 
-/opt/homebrew/bin/imagesnap <span class="s2">&quot;</span><span class="si">${</span><span class="nv">SCRIPT_DIR</span><span class="si">}</span><span class="s2">/img/</span><span class="si">${</span><span class="nv">persistent_counter</span><span class="si">}</span><span class="s2">.jpg&quot;</span>
+/opt/homebrew/bin/imagesnap<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">SCRIPT_DIR</span><span class="si">}</span><span class="s2">/img/</span><span class="si">${</span><span class="nv">persistent_counter</span><span class="si">}</span><span class="s2">.jpg&quot;</span>
 </code></pre></div>
 
 <p>Basically, I predefined a directory for the script (this instead could've been done by having the bash script find the directory that it was located in, but I wasn't sure how that interacted with cron). Inside of that directory, I have a file called <code>statefile</code> that exists to save the current number image that the bash script is on (as it saves them in the format <code>1.jpg</code>, <code>2.jpg</code>, etc.). The script reads in the file, increments the number found there, sleeps for a random amount of time from 0 to 1700 seconds<sup>[1]</sup> (I could've done 0 to 1800 but I wanted to avoid race conditions), and then takes a picture, saving it in the <code>/img/</code> folder.</p>
